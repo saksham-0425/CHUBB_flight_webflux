@@ -31,21 +31,12 @@ public class FlightController {
                         .body(saved));
     }
 
-    @PostMapping("/search")
-    public Flux<FlightSearchResponse> searchFlights(
-            @Valid @RequestBody Mono<FlightSearchRequest> requestMono) {
-
-        return requestMono.flatMapMany(req ->
-                inventoryService
-                        .searchFlights(req.getOrigin(), req.getDestination(), req.getDepartureDate())
-                        .flatMap(this::mapInventoryToResponse)
-        );
-    }
+   
     private Inventory mapToInventory(InventoryRequest req) {
         return Inventory.builder()
                 .flightId(req.getFlightId())
-                .origin(req.getOrigin())
-                .destination(req.getDestination())
+                
+              
                 .departureTime(req.getDepartureTime())
                 .arrivalTime(req.getArrivalTime())
                 .availableSeats(req.getAvailableSeats())
@@ -58,8 +49,7 @@ public class FlightController {
                 FlightSearchResponse.builder()
                         .inventoryId(inventory.getId())
                         .flightId(inventory.getFlightId())
-                        .origin(inventory.getOrigin())
-                        .destination(inventory.getDestination())
+                      
                         .departureTime(inventory.getDepartureTime())
                         .arrivalTime(inventory.getArrivalTime())
                         .price(inventory.getFareBuckets() != null &&

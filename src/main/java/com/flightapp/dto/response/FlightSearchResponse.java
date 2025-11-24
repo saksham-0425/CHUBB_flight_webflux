@@ -10,11 +10,10 @@ import java.time.Instant;
 @AllArgsConstructor
 @Builder
 public class FlightSearchResponse {
-
     private String inventoryId;
     private String flightId;
     private String airlineName;
-    private String airlineLogo;
+    private String airlineCode;
     private String origin;
     private String destination;
     private Instant departureTime;

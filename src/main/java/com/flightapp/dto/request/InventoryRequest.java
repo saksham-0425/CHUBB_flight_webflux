@@ -15,14 +15,8 @@ import java.util.Map;
 @Builder
 public class InventoryRequest {
 
-    @NotBlank(message = "Flight ID is required")
+   
     private String flightId;
-
-    @NotBlank(message = "Origin is required")
-    private String origin;
-
-    @NotBlank(message = "Destination is required")
-    private String destination;
 
     @NotNull(message = "Departure time is required")
     private Instant departureTime;
