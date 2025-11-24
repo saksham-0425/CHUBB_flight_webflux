@@ -1,6 +1,6 @@
 package com.flightapp.service.impl;
 
-import com.flightapp.dto.response.FlightSearchResponse;
+
 import com.flightapp.model.Airline;
 import com.flightapp.model.Flight;
 import com.flightapp.model.Inventory;
@@ -17,7 +17,7 @@ import reactor.test.StepVerifier;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.time.Instant;
-import java.time.temporal.ChronoUnit;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -67,12 +67,12 @@ class FlightSearchServiceImplTest {
 
     @Test
     void search_shouldReturnResults() {
-        // stub repository chain
+
         when(flightRepository.findByOriginAndDestination("DEL", "BLR"))
                 .thenReturn(Flux.just(flight));
 
-        Instant start = inventory.getDepartureTime().truncatedTo(ChronoUnit.DAYS);
-        // inventoryRepository called with flight.getId() and start..end (we test by any)
+        
+      
         when(inventoryRepository.findByFlightAndDepartureBetween(eq("f-1"), any(Instant.class), any(Instant.class)))
                 .thenReturn(Flux.just(inventory));
 

@@ -1,7 +1,7 @@
 package com.flightapp.controller;
 
 import com.flightapp.dto.request.BookingRequest;
-import com.flightapp.dto.response.BookingResponse;
+
 import com.flightapp.model.Booking;
 import com.flightapp.model.Passenger;
 import com.flightapp.service.BookingService;
@@ -10,7 +10,7 @@ import org.junit.jupiter.api.Test;
 import org.mockito.*;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.reactive.server.WebTestClient;
-import reactor.core.publisher.Flux;
+
 import reactor.core.publisher.Mono;
 
 import java.time.Instant;

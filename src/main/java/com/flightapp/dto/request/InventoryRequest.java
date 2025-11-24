@@ -1,7 +1,7 @@
 package com.flightapp.dto.request;
 
 import com.flightapp.model.Inventory;
-import jakarta.validation.constraints.NotBlank;
+
 import jakarta.validation.constraints.NotNull;
 import lombok.*;
 

@@ -1,8 +1,8 @@
 package com.flightapp.controller;
 
-import com.flightapp.dto.request.FlightSearchRequest;
+
 import com.flightapp.dto.request.InventoryRequest;
-import com.flightapp.dto.response.FlightSearchResponse;
+
 import com.flightapp.model.Inventory;
 import com.flightapp.service.InventoryService;
 import jakarta.validation.Valid;
@@ -10,7 +10,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import reactor.core.publisher.Flux;
+
 import reactor.core.publisher.Mono;
 
 @RestController
@@ -44,19 +44,5 @@ public class FlightController {
                 .seatMap(req.getSeatMap())
                 .build();
     }
-    private Mono<FlightSearchResponse> mapInventoryToResponse(Inventory inventory) {
-        return Mono.just(
-                FlightSearchResponse.builder()
-                        .inventoryId(inventory.getId())
-                        .flightId(inventory.getFlightId())
-                      
-                        .departureTime(inventory.getDepartureTime())
-                        .arrivalTime(inventory.getArrivalTime())
-                        .price(inventory.getFareBuckets() != null &&
-                               inventory.getFareBuckets().containsKey("economy")
-                               ? inventory.getFareBuckets().get("economy").getPrice()
-                               : 0)
-                        .build()
-        );
-    }
+    
 }

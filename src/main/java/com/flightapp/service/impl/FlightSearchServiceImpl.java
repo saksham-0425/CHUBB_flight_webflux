@@ -1,8 +1,7 @@
 package com.flightapp.service.impl;
 
 import com.flightapp.dto.response.FlightSearchResponse;
-import com.flightapp.model.Flight;
-import com.flightapp.model.Inventory;
+
 import com.flightapp.model.Airline;
 import com.flightapp.repository.FlightRepository;
 import com.flightapp.repository.InventoryRepository;
@@ -11,7 +10,7 @@ import com.flightapp.service.FlightSearchService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import reactor.core.publisher.Flux;
-import reactor.core.publisher.Mono;
+
 
 import java.time.*;
 import java.time.temporal.ChronoUnit;
