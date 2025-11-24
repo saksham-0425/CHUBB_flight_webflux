@@ -123,7 +123,8 @@ DELETE	 /booking/cancel/{pnr}	    Cancel a booking
 
 ## 6. Jacoco Code Coverage Report
 
-<img width="700" height="337" alt="image" src="https://github.com/user-attachments/assets/04b3221a-b277-4e7f-8b79-b556522f3987" />
+<img width="700" height="337" alt="image" src="https://github.com/user-attachments/assets/390d87bf-1fe9-4f6a-bd57-b1dab2036bcd" />
+
 
 ## 7. Sonar Cloud Report 
 
